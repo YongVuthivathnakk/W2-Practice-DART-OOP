@@ -1,6 +1,4 @@
-import 'dart:io';
 
-import 'EX-1.dart';
 
 class BankAccount {
   final String accountOwner;
@@ -30,18 +28,18 @@ class BankAccount {
 
 class Bank {
   final String name;
-  List<BankAccount> bankAccount = [];
+  List<BankAccount> accounts = [];
 
   Bank({required this.name});
 
   BankAccount createAccount(int accountId, String accountOwner) {
-    for (var account in bankAccount) {
+    for (var account in accounts) {
       if (accountId == account.id) {
         throw Exception("Account ID $accountId already exists!");
       }
     }
     BankAccount newAccount = BankAccount(accountId, accountOwner, 0);
-    bankAccount.add(newAccount);
+    accounts.add(newAccount);
     return newAccount;
   }
 }
