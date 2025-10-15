@@ -1,5 +1,5 @@
 class MyDuration {
-  double _milliseconds;
+  double _milliseconds = 0;
 
   set milliseconds(double value) {
     if(value < 0) {
@@ -8,7 +8,13 @@ class MyDuration {
     _milliseconds = value;
   }
 
-  MyDuration(double milliseconds) : _milliseconds = milliseconds;
+  MyDuration(double milliseconds) {
+    if(milliseconds < 0) {
+      throw ArgumentError("Price shall always be greater or equalt to 0");
+    }
+    _milliseconds = milliseconds;
+  }
+  
   MyDuration.fromHours(double hours) : this._milliseconds = hours * 36e+6;
   MyDuration.fromMinutes(double minutes) : this._milliseconds = minutes * 60000;
   MyDuration.fromSeconds(double seconds) : this._milliseconds = seconds * 1000;
