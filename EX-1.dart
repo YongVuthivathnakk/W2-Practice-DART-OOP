@@ -9,7 +9,6 @@ class Address{
   const Address({required this.street, required this.city, required this.zipCode}); 
 }
 
-
 class Employee {
   final String _name;
   final double _baseSalary;
@@ -40,7 +39,6 @@ class Employee {
 
     return total;
   }
-
 
   void printDetails() {
     print('Employee: $name, Base Salary: \$${baseSalary}, Current Salary: \$${computeSalary()}, Skills: ${skills}, Address: ${address}, Years of Experience: ${yearsOfExperience}');
